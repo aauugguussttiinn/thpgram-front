@@ -1,15 +1,15 @@
-import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import Cookies from "js-cookie";
+// import React, { useEffect } from 'react';
+// import { useSelector } from 'react-redux';
+// import Cookies from "js-cookie";
 // import { getPosts } from 'redux/actions/postActions';
 // import Publication from 'components/Publication/Publication';
 
 const Home = () => {
   
-  const userState = useSelector((state) => state.userReducer);
+  // const userState = useSelector((state) => state.userReducer);
   // const posts = useSelector((state) => state.postReducer);
-  const detectUrlChange = window.location.pathname.split('/').pop();
-  const token = Cookies.get('token');
+  // const detectUrlChange = window.location.pathname.split('/').pop();
+  // const token = Cookies.get('token');
 
   // useEffect(() => {
   //   getPosts(token);

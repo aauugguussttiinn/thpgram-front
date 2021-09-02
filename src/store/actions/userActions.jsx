@@ -8,7 +8,7 @@ export const EDIT_USER_PROFILE = 'EDIT_USER_PROFILE';
 
 export const createUser = (data) => {
   return (dispatch) => {
-    return fetch('http://localhost:1337/auth/local/register', {
+    return fetch('http://localhost:3000/api/signup', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json'

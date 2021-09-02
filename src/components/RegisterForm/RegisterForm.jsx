@@ -5,7 +5,6 @@ import { createUser, loginUser } from "store/actions/userActions";
 
 const RegisterForm = () => {
 
-  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
@@ -15,12 +14,11 @@ const RegisterForm = () => {
 
       if (email && password) {
         const userDataSignIn = {
-          username,
           email,
           password,
         };
         const userDataLogIn = {
-          identifier: email,
+          email,
           password,
         };
 
@@ -33,11 +31,6 @@ const RegisterForm = () => {
     <div className="d-flex">
       <div className="col-3"></div>
       <form className="col-6" onSubmit={ (e) => handleRegistration(e) }>
-        <div className="form-group">
-          <label htmlFor="exampleInputEmail1">Username</label>
-          <input type="text" className="form-control"
-            id="exampleInputUsername" placeholder="Enter username" value={username} onChange={ (e) => setUsername(e.target.value) }></input>
-        </div>
         <div className="form-group">
           <label htmlFor="exampleInputEmail1">Email address</label>
           <input type="email" className="form-control"
