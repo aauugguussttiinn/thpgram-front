@@ -28,6 +28,7 @@ ReactDOM.render(
 // npm install sass-loader sass webpack --save-dev
 // npm install react-bootstrap bootstrap
 // npm i -s react-redux redux redux-thunk redux-devtools-extension
+// npm install axios
 
 // code jsconfig.json
 // {
