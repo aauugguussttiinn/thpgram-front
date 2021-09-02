@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 import { applyMiddleware, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
-import rootReducer from "redux/reducers"
+import rootReducer from "store/reducers"
 
 const store = createStore(
   rootReducer,
@@ -37,3 +37,11 @@ ReactDOM.render(
 //   },
 //   "include": ["src"]
 // }
+
+// package.json
+// "scripts": {
+//   "start": "PORT=8000 react-scripts start",
+//   "build": "react-scripts build",
+//   "test": "react-scripts test",
+//   "eject": "react-scripts eject"
+// },

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { createUser, loginUser } from "redux/actions/userActions";
+import { createUser, loginUser } from "store/actions/userActions";
 
 const RegisterForm = () => {
 
