@@ -26,18 +26,19 @@ const App = () => {
     })
   });
 
-  const loginUserWithCookie = async() => {
+  const loginUserWithCookie = (id) => async() => {
     const token = Cookies.get('token');
 
     const cookiesConfig = {
       method: 'get',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`,
+        // Authorization: `Bearer ${token}`,
+        Authorization: `${token}`,
       },
     };
   
-    const response = await fetch(`http://localhost:1337/users/me`, cookiesConfig)
+    const response = await fetch(`http://localhost:3000/api/users/${id}`, cookiesConfig)
     const cookieData = await response.json();
     if (!cookieData.error) {
       return true;
@@ -48,7 +49,7 @@ const App = () => {
   };
 
   const checkAuth = async() => {
-    const a = await (loginUserWithCookie());
+    const a = await (loginUserWithCookie(Cookies.get('id')));
     if (currentUser || a === true) {
       return true;
     } else {
