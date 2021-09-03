@@ -30,9 +30,11 @@ export const loginUser = (userData) => async(dispatch) => {
     body: JSON.stringify(userData)
   };
 
-  const res = await fetch('http://localhost:1337/auth/local', config)
+  const res = await fetch('http://localhost:3000/api/login', config)
+  console.log(res);
   const data = await res.json();
-  if (data.user) {
+  console.log(data)
+  if (data.data) {
     dispatch({ type: LOGIN_USER, payload: data });
   } else {
     console.log('login fetch not working')

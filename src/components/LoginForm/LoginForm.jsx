@@ -15,9 +15,11 @@ const LoginForm = () => {
 
     if (email && password) {
       const userData = {
-        identifier: email,
-        password,
-      };
+        user: {
+            email: email,
+            password: password
+        }
+    };
 
       await dispatch(loginUser(userData))
     }
