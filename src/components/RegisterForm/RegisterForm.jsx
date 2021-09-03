@@ -13,17 +13,19 @@ const RegisterForm = () => {
       e.preventDefault();
 
       if (email && password) {
-        const userDataSignIn = {
-          email,
-          password,
-        };
-        const userDataLogIn = {
-          email,
-          password,
-        };
+        const userDataSignUp = {
+          user: {
+              email: email,
+              password: password
+          }
+      };
+        // const userDataLogIn = {
+        //   email,
+        //   password,
+        // };
 
-        await dispatch(createUser(userDataSignIn));
-        await dispatch(loginUser(userDataLogIn));
+        await dispatch(createUser(userDataSignUp));
+        // await dispatch(loginUser(userDataLogIn));
       }
   };
   

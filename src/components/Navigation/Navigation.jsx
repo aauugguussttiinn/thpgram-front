@@ -30,7 +30,7 @@ const Navigation = ({ auth }) => {
         {!auth && (
           <>
             <NavLink exact to="/register" className="btn btn-primary mx-2">
-              Sign In
+              Sign Up
             </NavLink>
             <NavLink exact to="/login" className="btn btn-primary mx-2">
               Log In
