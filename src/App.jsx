@@ -34,8 +34,8 @@ const App = () => {
       method: 'get',
       headers: {
         'Content-Type': 'application/json',
-        // Authorization: `Bearer ${token}`,
-        Authorization: `${token}`,
+        Authorization: `Bearer ${token}`,
+        // Authorization: `${token}`,
       },
     };
   

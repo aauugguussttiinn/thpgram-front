@@ -37,6 +37,7 @@ export const loginUser = (userData) => async(dispatch) => {
   let token = await res.headers.get('authorization');
   if (user.data) {
     Cookies.set('token', token.split(' ')[1], {secure: true});
+    // Cookies.set('token', token);
     Cookies.set('id', user.data.id, {secure: true});
     dispatch({ type: LOGIN_USER, payload: user.data });
   } else {
