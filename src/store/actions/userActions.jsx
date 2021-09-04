@@ -35,7 +35,6 @@ export const loginUser = (userData) => async(dispatch) => {
   const res = await fetch('http://localhost:3000/api/login', config)
   const user = await res.json();
   let token = await res.headers.get('authorization');
-  console.log(token)
   if (user.data) {
     Cookies.set('token', token.split(' ')[1], {secure: true});
     Cookies.set('id', user.data.id, {secure: true});

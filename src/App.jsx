@@ -26,8 +26,9 @@ const App = () => {
     })
   });
 
-  const loginUserWithCookie = (id) => async() => {
+  const loginUserWithCookie = async() =>{
     const token = Cookies.get('token');
+    const id = Cookies.get('id');
 
     const cookiesConfig = {
       method: 'get',
@@ -40,16 +41,19 @@ const App = () => {
   
     const response = await fetch(`http://localhost:3000/api/users/${id}`, cookiesConfig)
     const cookieData = await response.json();
+    console.log(cookieData);
     if (!cookieData.error) {
+      console.log("is true");
       return true;
     } else {
+      console.log("is false");
       return false;
     }
 
   };
 
   const checkAuth = async() => {
-    const a = await (loginUserWithCookie(Cookies.get('id')));
+    const a = await (loginUserWithCookie());
     if (currentUser || a === true) {
       return true;
     } else {

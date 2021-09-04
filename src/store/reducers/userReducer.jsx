@@ -10,7 +10,7 @@ export default function userReducer(state = userInitialState, action) {
     case CREATE_USER:
       return [action.payload, ...state];
     case LOGIN_USER:
-      Cookies.set("token", action.payload.jwt)
+      // Cookies.set("token", action.payload.jwt)
       return {
         ...state,
         user: action.payload.user,
