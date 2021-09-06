@@ -12,7 +12,7 @@ const LoginForm = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
+    console.log("test passage")
     if (email && password) {
       const userData = {
         user: {

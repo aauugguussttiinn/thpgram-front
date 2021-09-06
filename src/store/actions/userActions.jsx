@@ -36,6 +36,7 @@ export const loginUser = (userData) => async(dispatch) => {
   const user = await res.json();
   let token = await res.headers.get('authorization');
   if (user.data) {
+    console.log("1234")
     Cookies.set('token', token.split(' ')[1], {secure: true});
     // Cookies.set('token', token);
     Cookies.set('id', user.data.id, {secure: true});
