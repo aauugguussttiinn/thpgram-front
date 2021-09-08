@@ -61,6 +61,8 @@ const App = () => {
     }
   }
 
+
+  // see at the bottom the other syntax for private route
   const PrivateRoute = ({ component: Component, ...rest }) => (
       <>
         { loading ? (
@@ -86,3 +88,22 @@ const App = () => {
 };
 
 export default App;
+
+
+
+
+// const PrivateRoute = ({ component: Component, ...rest }) => (
+//   <>
+//     { loading ? (
+//       <Loader type='spin' color='#454545' />
+//     ) : ( 
+//       <></>
+//     )
+//     }
+//     { isAuthTrue ? (
+//       < Route {...rest} render={ props => ( ( <Component {...props} />))} />
+//        ):(
+//        <Redirect to={{ pathname: '/login' }} /> )
+//     }
+//   </>
+// );
